@@ -12,10 +12,10 @@ PHP code used to download, store to MySQL and update the BL Flickr 1 Million Ima
 ## Files:
 
 ### Dockerfile
-Used to generate an image for the core PHP CLI container -- php:7.2.8-fpm with pdo_mysql, mysqli and memcached PHP extensions installed
+Used to generate an image for the core PHP CLI container: php:7.2.8-fpm with pdo_mysql, mysqli and memcached PHP extensions installed.
 
 ### docker-compose.yml
-Orchestration of the 3 containers: PHP from image above, MySQL and Memcached official images from DockerHub
+Orchestration of the 3 containers: PHP from image above, MySQL and Memcached official images from DockerHub.
 
 Bring it up running:
 ```sh
