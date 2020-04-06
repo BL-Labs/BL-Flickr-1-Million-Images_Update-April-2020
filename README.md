@@ -1,8 +1,8 @@
 # BL Flickr 1 Million Images Collection: Update April 2020
-#### PHP code used to download, store to MySQL and update the BL Flickr 1 Million Images Collection (records' title and description) using Flickr API
+PHP code used to download, store to MySQL and update the BL Flickr 1 Million Images Collection (records' title and description) using Flickr API
 
 
-## Features
+## Features / steps:
 
 - Downloads all the metadata associated with the photos at Flickr via its API (flickr.photos.search) -- pages of 250 records each;
 - Stores the metadata into a MySQL DB ("snapshot" table);
