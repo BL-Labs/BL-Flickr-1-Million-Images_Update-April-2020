@@ -1,5 +1,5 @@
 # BL Flickr 1 Million Images Collection: Update April 2020
-### PHP code used to download, store to MySQL and update the BL Flickr 1 Million Images Collection (records' title and description) using Flickr API
+#### PHP code used to download, store to MySQL and update the BL Flickr 1 Million Images Collection (records' title and description) using Flickr API
 
 ## Files:
 
@@ -14,7 +14,7 @@ Bring it up running "/usr/local/bin/docker-compose up -d"
 ### flic2mysql.php
 Imports all the data given by the flickr.photos.search method (https://www.flickr.com/services/api/explore/flickr.photos.search) into MySQL. Each call retrieves 250 records (one page; max allowed by the API = 500 records per page), rendering in 4095 pages (calls) --- Total: 1M23K records.
 
-Run it and log to a file wirth the current date / time:
+Run it and log to a file with the current date / time stamp at the file name:
 docker exec -it phpFlickr php flic2mysql.php > flic2mysql_`date +\%Y\%m\%d-\%H\%M`.txt
 
 ### composer.json:
