@@ -30,7 +30,7 @@ $ docker exec -it phpFlickr php flic2mysql.php > flic2mysql_`date +\%Y\%m\%d-\%H
 ```
 Once finished (or if interrupting running the script above), as a matter of precaution, do a backup of the DB (mysql dump):
 ```sh
-docker exec -it database mysqldump -u <user> -p<password> Flickr | gzip -9 > flickr_<date>_<description>.sql.gz 
+$ docker exec -it database mysqldump -u <user> -p<password> Flickr | gzip -9 > flickr_<date>_<description>.sql.gz 
 ```
 ### composer.json:
 Needed to get and install dependencies of "_this app local directory_/updateDescAndTitle.php" (to be uploaded)
