@@ -29,7 +29,7 @@ Run it and log to a file with the current date / time stamp at the file name:
 $ docker exec -it phpFlickr php flic2mysql.php > flic2mysql_`date +\%Y\%m\%d-\%H\%M`.txt
 ```
 ### composer.json:
-Needed to get and install dependencies of <this app local directory>/updateDescAndTitle.php (to be uploaded)
+Needed to get and install dependencies of _this app local directory>_/updateDescAndTitle.php (to be uploaded)
 ```sh
 $ docker run --rm -it -v <this app local directory>:/var/www/html/ jitesoft/composer php phpflickr/updateDescAndTitle.php
 ```
