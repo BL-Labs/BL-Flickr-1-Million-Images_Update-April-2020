@@ -22,7 +22,7 @@ Bring it up running:
 $ /usr/local/bin/docker-compose up -d
 ```
 ### flic2mysql.php
-Imports all the data given by the flickr.photos.search method (https://www.flickr.com/services/api/explore/flickr.photos.search) into MySQL. Each call retrieves 250 records (one page; max allowed by the API = 500 records per page), rendering in 4095 pages (calls) --- Total: 1M23K records.
+Imports all the data given by the [flickr.photos.search](https://www.flickr.com/services/api/explore/flickr.photos.search) method  into MySQL. Each call retrieves 250 records (one page; max allowed by the API = 500 records per page), rendering in 4095 pages (calls) --- Total: 1M23K records.
 
 Run it and log to a file with the current date / time stamp at the file name -- it will take more than 24 hours to run:
 ```sh
