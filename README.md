@@ -1,6 +1,14 @@
 # BL Flickr 1 Million Images Collection: Update April 2020
 #### PHP code used to download, store to MySQL and update the BL Flickr 1 Million Images Collection (records' title and description) using Flickr API
 
+
+## Features
+
+- Downloads all the metadata associated with the photos at Flickr via its API (flickr.photos.search) -- pages of 250 records each;
+- Stores the metadata into a MySQL DB ("snapshot" table);
+- Updates the Title and Descripetion, storing them in a new MySQL table;
+- Reads the records from that new table and updates the records at Flickr via API (flickr.photos.setMeta) - one record at a time.
+
 ## Files:
 
 ### Dockerfile
@@ -11,7 +19,7 @@ Orchestration of the 3 containers: PHP from image above, MySQL and Memcached off
 
 Bring it up running:
 ```sh
-$ "/usr/local/bin/docker-compose up -d"
+$ /usr/local/bin/docker-compose up -d
 ```
 ### flic2mysql.php
 Imports all the data given by the flickr.photos.search method (https://www.flickr.com/services/api/explore/flickr.photos.search) into MySQL. Each call retrieves 250 records (one page; max allowed by the API = 500 records per page), rendering in 4095 pages (calls) --- Total: 1M23K records.
@@ -21,7 +29,7 @@ Run it and log to a file with the current date / time stamp at the file name:
 $ docker exec -it phpFlickr php flic2mysql.php > flic2mysql_`date +\%Y\%m\%d-\%H\%M`.txt
 ```
 ### composer.json:
-Needed to get and install dependencies of phpflickr/updateDescAndTitle.php (to be uploaded)
+Needed to get and install dependencies of <this app local directory>/updateDescAndTitle.php (to be uploaded)
 ```sh
-$ docker run --rm -it -v /home/filipeb/FlickrPHP:/var/www/html/ jitesoft/composer php phpflickr/updateDescAndTitle.php
+$ docker run --rm -it -v <this app local directory>:/var/www/html/ jitesoft/composer php phpflickr/updateDescAndTitle.php
 ```
