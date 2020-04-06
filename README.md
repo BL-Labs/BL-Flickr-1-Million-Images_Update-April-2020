@@ -6,7 +6,7 @@ PHP code used to download, store to MySQL and update the BL Flickr 1 Million Ima
 
 - Downloads all the metadata associated with the photos at Flickr via its API (flickr.photos.search) -- pages of 250 records each;
 - Stores the metadata into a MySQL DB ("snapshot" table);
-- Updates the Title and Descripetion, storing them in a new MySQL table;
+- Updates the Title and Description, storing them in a new MySQL table;
 - Reads the records from that new table and updates the records at Flickr via API (flickr.photos.setMeta) - one record at a time.
 
 ## Files:
