@@ -1,4 +1,109 @@
 use Flickr;
+
 SET sql_mode = ALLOW_INVALID_DATES;
-CREATE TABLE `BLPhotos20200330` (   `photoid` char(11) NOT NULL DEFAULT '',   `secret` char(10) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,   `server` mediumint DEFAULT '0',   `farm` tinyint DEFAULT '0',   `title` char(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT '0',   `ispublic` tinyint(1) DEFAULT '1',   `license` tinyint(1) DEFAULT '0',   `o_width` smallint DEFAULT '0',   `o_height` smallint DEFAULT '0',   `dateupload` char(10) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT '0',   `lastupdate` char(10) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,   `datetaken` timestamp NULL DEFAULT NULL,   `datetakengranularity` int DEFAULT NULL,   `datetakenunknown` int DEFAULT NULL,   `ownername` char(50) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,   `iconserver` char(4) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,   `iconfarm` char(2) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,   `views` mediumint DEFAULT NULL,   `tags` text CHARACTER SET utf8 COLLATE utf8_general_ci,   `machine_tags` text CHARACTER SET utf8 COLLATE utf8_general_ci,   `originalsecret` char(10) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,   `originalformat` char(10) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,   `latitude` char(20) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,   `longitude` char(20) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,   `accuracy` char(10) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,   `context` char(10) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,   `media` char(10) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,   `media_status` char(10) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,   `url_sq` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,   `height_sq` smallint DEFAULT NULL,   `width_sq` smallint DEFAULT NULL,   `url_t` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,   `height_t` smallint DEFAULT NULL,   `width_t` smallint DEFAULT NULL,   `url_s` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,   `height_s` smallint DEFAULT NULL,   `width_s` smallint DEFAULT NULL,   `url_q` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,   `height_q` smallint DEFAULT NULL,   `width_q` smallint DEFAULT NULL,   `url_m` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,   `height_m` smallint DEFAULT NULL,   `width_m` smallint DEFAULT NULL,   `url_n` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,   `height_n` smallint DEFAULT NULL,   `width_n` smallint DEFAULT NULL,   `url_z` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,   `height_z` smallint DEFAULT NULL,   `width_z` smallint DEFAULT NULL,   `url_c` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,   `height_c` smallint DEFAULT NULL,   `width_c` smallint DEFAULT NULL,   `url_l` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,   `height_l` smallint DEFAULT NULL,   `width_l` smallint DEFAULT NULL,   `url_o` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,   `height_o` smallint DEFAULT NULL,   `width_o` smallint DEFAULT NULL,   `pathalias` char(30) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,   `description` text CHARACTER SET utf8 COLLATE utf8_general_ci,   PRIMARY KEY (`photoid`) ) ENGINE=InnoDB DEFAULT CHARSET=utf8; 
-CREATE TABLE `BLPhotosNewData` (   `photoid` char(11) NOT NULL DEFAULT '',   `title` char(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT '0',   `description` text CHARACTER SET utf8 COLLATE utf8_general_ci,   PRIMARY KEY (`photoid`) ) ENGINE=InnoDB DEFAULT CHARSET=utf8; 
+
+CREATE TABLE `blphotos20200330` 
+  ( 
+     `photoid`              CHAR(11) NOT NULL DEFAULT '', 
+     `secret`               CHAR(10) CHARACTER SET utf8 COLLATE utf8_general_ci 
+     DEFAULT NULL, 
+     `server`               MEDIUMINT DEFAULT '0', 
+     `farm`                 TINYINT DEFAULT '0', 
+     `title`                CHAR(255) CHARACTER SET utf8 COLLATE utf8_general_ci 
+     DEFAULT '0', 
+     `ispublic`             TINYINT(1) DEFAULT '1', 
+     `license`              TINYINT(1) DEFAULT '0', 
+     `o_width`              SMALLINT DEFAULT '0', 
+     `o_height`             SMALLINT DEFAULT '0', 
+     `dateupload`           CHAR(10) CHARACTER SET utf8 COLLATE utf8_general_ci 
+     DEFAULT '0', 
+     `lastupdate`           CHAR(10) CHARACTER SET utf8 COLLATE utf8_general_ci 
+     DEFAULT NULL, 
+     `datetaken`            TIMESTAMP NULL DEFAULT NULL, 
+     `datetakengranularity` INT DEFAULT NULL, 
+     `datetakenunknown`     INT DEFAULT NULL, 
+     `ownername`            CHAR(50) CHARACTER SET utf8 COLLATE utf8_general_ci 
+     DEFAULT NULL, 
+     `iconserver`           CHAR(4) CHARACTER SET utf8 COLLATE utf8_general_ci 
+     DEFAULT NULL, 
+     `iconfarm`             CHAR(2) CHARACTER SET utf8 COLLATE utf8_general_ci 
+     DEFAULT NULL, 
+     `views`                MEDIUMINT DEFAULT NULL, 
+     `tags`                 TEXT CHARACTER SET utf8 COLLATE utf8_general_ci, 
+     `machine_tags`         TEXT CHARACTER SET utf8 COLLATE utf8_general_ci, 
+     `originalsecret`       CHAR(10) CHARACTER SET utf8 COLLATE utf8_general_ci 
+     DEFAULT 
+     NULL, 
+     `originalformat`       CHAR(10) CHARACTER SET utf8 COLLATE utf8_general_ci 
+     DEFAULT 
+     NULL, 
+     `latitude`             CHAR(20) CHARACTER SET utf8 COLLATE utf8_general_ci 
+     DEFAULT NULL, 
+     `longitude`            CHAR(20) CHARACTER SET utf8 COLLATE utf8_general_ci 
+     DEFAULT NULL, 
+     `accuracy`             CHAR(10) CHARACTER SET utf8 COLLATE utf8_general_ci 
+     DEFAULT NULL, 
+     `context`              CHAR(10) CHARACTER SET utf8 COLLATE utf8_general_ci 
+     DEFAULT NULL, 
+     `media`                CHAR(10) CHARACTER SET utf8 COLLATE utf8_general_ci 
+     DEFAULT NULL, 
+     `media_status`         CHAR(10) CHARACTER SET utf8 COLLATE utf8_general_ci 
+     DEFAULT NULL, 
+     `url_sq`               VARCHAR(100) CHARACTER SET utf8 COLLATE 
+     utf8_general_ci DEFAULT NULL, 
+     `height_sq`            SMALLINT DEFAULT NULL, 
+     `width_sq`             SMALLINT DEFAULT NULL, 
+     `url_t`                VARCHAR(100) CHARACTER SET utf8 COLLATE 
+     utf8_general_ci DEFAULT NULL, 
+     `height_t`             SMALLINT DEFAULT NULL, 
+     `width_t`              SMALLINT DEFAULT NULL, 
+     `url_s`                VARCHAR(100) CHARACTER SET utf8 COLLATE 
+     utf8_general_ci DEFAULT NULL, 
+     `height_s`             SMALLINT DEFAULT NULL, 
+     `width_s`              SMALLINT DEFAULT NULL, 
+     `url_q`                VARCHAR(100) CHARACTER SET utf8 COLLATE 
+     utf8_general_ci DEFAULT NULL, 
+     `height_q`             SMALLINT DEFAULT NULL, 
+     `width_q`              SMALLINT DEFAULT NULL, 
+     `url_m`                VARCHAR(100) CHARACTER SET utf8 COLLATE 
+     utf8_general_ci DEFAULT NULL, 
+     `height_m`             SMALLINT DEFAULT NULL, 
+     `width_m`              SMALLINT DEFAULT NULL, 
+     `url_n`                VARCHAR(100) CHARACTER SET utf8 COLLATE 
+     utf8_general_ci DEFAULT NULL, 
+     `height_n`             SMALLINT DEFAULT NULL, 
+     `width_n`              SMALLINT DEFAULT NULL, 
+     `url_z`                VARCHAR(100) CHARACTER SET utf8 COLLATE 
+     utf8_general_ci DEFAULT NULL, 
+     `height_z`             SMALLINT DEFAULT NULL, 
+     `width_z`              SMALLINT DEFAULT NULL, 
+     `url_c`                VARCHAR(100) CHARACTER SET utf8 COLLATE 
+     utf8_general_ci DEFAULT NULL, 
+     `height_c`             SMALLINT DEFAULT NULL, 
+     `width_c`              SMALLINT DEFAULT NULL, 
+     `url_l`                VARCHAR(100) CHARACTER SET utf8 COLLATE 
+     utf8_general_ci DEFAULT NULL, 
+     `height_l`             SMALLINT DEFAULT NULL, 
+     `width_l`              SMALLINT DEFAULT NULL, 
+     `url_o`                VARCHAR(100) CHARACTER SET utf8 COLLATE 
+     utf8_general_ci DEFAULT NULL, 
+     `height_o`             SMALLINT DEFAULT NULL, 
+     `width_o`              SMALLINT DEFAULT NULL, 
+     `pathalias`            CHAR(30) CHARACTER SET utf8 COLLATE utf8_general_ci 
+     DEFAULT NULL, 
+     `description`          TEXT CHARACTER SET utf8 COLLATE utf8_general_ci, 
+     PRIMARY KEY (`photoid`) 
+  ) 
+engine=innodb 
+DEFAULT charset=utf8; 
+
+CREATE TABLE `blphotosnewdata` 
+  ( 
+     `photoid`     CHAR(11) NOT NULL DEFAULT '', 
+     `title`       CHAR(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT 
+     '0', 
+     `description` TEXT CHARACTER SET utf8 COLLATE utf8_general_ci, 
+     PRIMARY KEY (`photoid`) 
+  ) 
+engine=innodb 
+DEFAULT charset=utf8; 
