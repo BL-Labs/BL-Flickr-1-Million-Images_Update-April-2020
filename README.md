@@ -9,6 +9,7 @@ PHP code used to download, store to MySQL (all the records' metadata) and update
 - Reads the records from that new table and updates the records at Flickr via API (flickr.photos.setMeta) - one record at a time.
 
 ## Files:
+(and steps to be run in the order presented)
 
 ### Dockerfile
 Used to generate an image for the core PHP CLI container: php:7.2.8-fpm with pdo_mysql, mysqli and memcached PHP extensions installed.
@@ -20,6 +21,13 @@ Bring it up running:
 ```sh
 $ /usr/local/bin/docker-compose up -d
 ```
+
+### MySQL_DB_Flickr_CREATE_TABLES.sql
+SQL to create the tables needed to store the data at the MySQL server (_database_ container)
+```sh
+$ docker exec -it database mysql -u root -p
+```
+
 ### flic2mysql.php
 Imports all the data given by the [flickr.photos.search](https://www.flickr.com/services/api/explore/flickr.photos.search) method into MySQL. Each call retrieves 250 records (one page; max allowed by the API = 500 records per page), rendering in 4095 pages (calls) --- Total: 1M23K records.
 
