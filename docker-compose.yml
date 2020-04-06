@@ -1,0 +1,26 @@
+version: '1.0'
+
+services:
+  app_memcached:
+    image: memcached:latest
+    container_name: memcached
+  app_mysql:
+    image: mysql:latest
+    container_name: database
+    volumes:
+      - ./docker/:/etc/mysql/conf.d
+      - ./docker/:/docker-entrypoint-initdb.d
+    environment:
+      - MYSQL_ROOT_PASSWORD=*************
+      - MYSQL_DATABASE=Flickr
+      - MYSQL_USER=********
+      - MYSQL_PASSWORD=************
+  app_php:
+    build: .
+    container_name: phpFlickr
+    working_dir: /app
+    volumes:
+      - ./:/app
+    external_links:
+      - database
+      - memcached
