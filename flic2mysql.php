@@ -37,7 +37,7 @@ $params = array(
 	'format'	=> 'php_serial',
 );
 
-$startPage = 101;
+$startPage = 1; // change this page number in case for some reason the API returns a page of empty records, and you need to grab it again -- change the $endPage page too, if you have run it until the end.
 $endPage = 4095; // total pages = 4095 (250 records each)
 
 $numRecords = 250;
