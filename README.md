@@ -24,9 +24,9 @@ $ /usr/local/bin/docker-compose up -d
 ```
 
 ### MySQL_DB_Flickr_CREATE_TABLES.sql
-SQL to create the tables needed to store the data at the MySQL server (_database_ container)
+SQL to create the tables needed to store the data at the MySQL server (_database_ container, _Flickr_ database)
 ```sh
-$ docker exec -it database mysql -u root -p
+$ docker exec -it database mysql -u root -p Flickr < MySQL_DB_Flickr_CREATE_TABLES.sql
 ```
 
 ### flic2mysql.php
