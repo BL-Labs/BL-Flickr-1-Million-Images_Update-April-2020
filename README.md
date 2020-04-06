@@ -28,6 +28,10 @@ Run it and log to a file with the current date / time stamp at the file name:
 ```sh
 $ docker exec -it phpFlickr php flic2mysql.php > flic2mysql_`date +\%Y\%m\%d-\%H\%M`.txt
 ```
+As a matter of precaution, do a backup of the DB (mysql dump):
+```sh
+docker exec -it database mysqldump -u <user> -p<password> Flickr | gzip -9 > flickr_<date>_<description>.sql.gz 
+```
 ### composer.json:
 Needed to get and install dependencies of "_this app local directory_/updateDescAndTitle.php" (to be uploaded)
 ```sh
