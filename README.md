@@ -19,4 +19,5 @@ docker exec -it phpFlickr php flic2mysql.php > flic2mysql_`date +\%Y\%m\%d-\%H\%
 
 ### composer.json:
 Needed to get and install dependencies of phpflickr/updateDescAndTitle.php (to be uploaded)
+
 docker run --rm -it -v /home/filipeb/FlickrPHP:/var/www/html/ jitesoft/composer php phpflickr/updateDescAndTitle.php
