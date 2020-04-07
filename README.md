@@ -1,6 +1,6 @@
 # The British Library's Flickr 1 Million Images Collection 
 ## Records Update April 2020
-PHP code used to download, store to MySQL (all the records' metadata) and update the [BL Flickr 1 Million Images Collection](https://www.flickr.com/photos/britishlibrary/) (records' title and description) using Flickr API
+Infrastructure (Docker Orchestration) and PHP code used to download, store to MySQL (all the records' metadata) and update the [BL Flickr 1 Million Images Collection](https://www.flickr.com/photos/britishlibrary/) (records' title and description) using Flickr API
 
 ## Features / steps:
 
