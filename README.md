@@ -41,7 +41,16 @@ Once finished (or if interrupting running the script above), as a matter of prec
 $ docker exec -it database mysqldump -u <user> -p<password> Flickr | gzip -9 > flickr_<date>_<description>.sql.gz 
 ```
 ### composer.json:
-Needed to get and install dependencies of "_this app local directory_/updateDescAndTitle.php" (to be uploaded)
+Needed to get and install dependencies of "_this app local directory_/updateDescAndTitle.php"
 ```sh
 $ docker run --rm -it -v <this app local directory>:/var/www/html/ jitesoft/composer php phpflickr/updateDescAndTitle.php
 ```
+
+Note: to save a text file as tab-delimited, UTF-8 encoded in Excel:
+
+Choose File->Save as from the menu.
+In the 'Save as type' dropdown > select 'Text (Tab delimited) (*.txt)'
+Select 'Web Options' in the 'Tools...' dropdown at the bottom of the dialog box.
+Select the 'Encoding' tab.
+In the 'Save this document as:' dropdown, select 'Unicode (UTF-8)'
+If this fails, and it still saves in ANSI: Notepad++ > Encoding > Convert To UTF-8
