@@ -46,11 +46,7 @@ Needed to get and install dependencies of "_this app local directory_/updateDesc
 $ docker run --rm -it -v <this app local directory>:/var/www/html/ jitesoft/composer php phpflickr/updateDescAndTitle.php
 ```
 
-Note: to save a text file as tab-delimited, UTF-8 encoded in Excel:
+Note -- to save a text file as tab-delimited, UTF-8 encoded from Excel spreadsheet:
 
-Choose File->Save as from the menu.
-In the 'Save as type' dropdown > select 'Text (Tab delimited) (*.txt)'
-Select 'Web Options' in the 'Tools...' dropdown at the bottom of the dialog box.
-Select the 'Encoding' tab.
-In the 'Save this document as:' dropdown, select 'Unicode (UTF-8)'
-If this fails, and it still saves in ANSI: Notepad++ > Encoding > Convert To UTF-8
+* Choose File->Save as from the menu > "Unicode Text"
+* Open the output file with Notepad++ > Encoding > Convert to UTF-8
